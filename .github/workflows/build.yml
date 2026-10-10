@@ -9,6 +9,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unzip projects
         run: |
+          mkdir -p unz
           for z in ./*.zip; do
             unzip -q -o "$z" -d "unz/$(basename "$z" .zip)"
           done
